@@ -1,12 +1,13 @@
 from books.models import Book
 from users.models import User
 from django.db import models
+from datetime import datetime
 
 class Comment(models.Model):
     use_in_migrations = True
     comment_id = models.AutoField(primary_key=True)
     comment = models.TextField()
-    reg_date = models.DateField()
+    reg_date = models.DateField(default=datetime.now)
     auto_recode = models.TextField()
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)

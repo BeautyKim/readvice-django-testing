@@ -1,9 +1,9 @@
 from rest_framework import status
 from rest_framework.decorators import api_view, parser_classes
 from rest_framework.parsers import JSONParser
-from .models import  User
-from .serializers import UserSerializer
 from rest_framework.response import Response
+from .models import User
+from .serializers import UserSerializer
 
 @api_view(["GET", "POST", "PUT", "DELETE"])
 @parser_classes([JSONParser])
